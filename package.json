@@ -1,6 +1,6 @@
 {
   "name": "frontend-setup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An offline-first frontend architecture setup CLI with framework-aware defaults.",
   "author": "Franklivania",
   "type": "module",
