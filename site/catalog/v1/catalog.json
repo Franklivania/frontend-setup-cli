@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026.10.1",
+  "publishedAt": "2026-10-13T00:00:00.000Z",
+  "summary": "Initial public knowledge catalog for Frontend Setup. Contains bounded guidance only; it does not contain executable recipes or change local scaffold templates.",
+  "frameworks": {
+    "next-app-router": {
+      "guidance": [
+        "Keep Server Components as the default and add client boundaries only where interaction requires them.",
+        "Create route groups only when they represent meaningful layout or navigation boundaries.",
+        "Keep route entry files focused; place reusable composition and infrastructure outside app routes."
+      ]
+    },
+    "react-vite": {
+      "guidance": [
+        "Keep the app entry and routing layer thin; put shared UI and domain-specific behavior in clearly owned modules.",
+        "Use local component state first and add shared state or server-cache dependencies only when the use case needs them.",
+        "Keep API contracts and request handling separate from presentational components."
+      ]
+    },
+    "astro": {
+      "guidance": [
+        "Prefer .astro components and static rendering for content that does not require client-side interactivity.",
+        "Add hydrated islands only for the interactive parts that need them; do not introduce React solely for animation.",
+        "Keep route files aligned with Astro conventions and share layouts through src/layouts."
+      ]
+    },
+    "expo": {
+      "guidance": [
+        "Use React Native components and TypeScript design tokens; do not carry browser CSS or DOM manipulation into native code.",
+        "Prefer React Native Reanimated for complex motion and gestures, while using native capabilities for simpler transitions.",
+        "Respect Expo SDK compatibility when installing native dependencies; use Expo-aware installation where appropriate."
+      ]
+    },
+    "react-router": {
+      "guidance": [
+        "Keep route definitions and data-loading behavior aligned with the selected React Router mode.",
+        "Use nested layouts for genuine shared UI boundaries and keep route-level components focused.",
+        "Do not add a separate global server-state cache when the router's data APIs already cover the use case."
+      ]
+    },
+    "vanilla": {
+      "guidance": [
+        "Use native ES modules and progressive enhancement instead of introducing a framework for simple pages.",
+        "Keep shared tokens in CSS and use BEM-style kebab-case classes for component naming.",
+        "Use data attributes for declarative behavior targets, with explicit cleanup for listeners and observers."
+      ]
+    }
+  },
+  "profiles": {
+    "landing-page": {
+      "guidance": [
+        "Optimize for one clear user journey and keep the page structure shallow.",
+        "Use motion to clarify hierarchy or guide attention; avoid animation that delays the primary action."
+      ]
+    },
+    "marketing-site": {
+      "guidance": [
+        "Share navigation, footer, and page shells without turning every section into a global abstraction.",
+        "Include metadata, semantic headings, accessible links, and responsive layouts from the start."
+      ]
+    },
+    "cms-blog": {
+      "guidance": [
+        "Keep content shape and content rendering separate so the source can change without rewriting page composition.",
+        "Account for metadata, article semantics, image dimensions, and missing-content states."
+      ]
+    },
+    "saas-dashboard": {
+      "guidance": [
+        "Make loading, empty, error, permission, and success states explicit for data-driven views.",
+        "Use server-state caching and global client state only where their distinct responsibilities are needed."
+      ]
+    },
+    "general-web-app": {
+      "guidance": [
+        "Let domain boundaries emerge from actual product responsibilities rather than scaffolding every possible feature folder.",
+        "Keep validation, API contracts, and error behavior explicit at application boundaries."
+      ]
+    },
+    "design-system": {
+      "guidance": [
+        "Define token semantics, component variants, accessibility expectations, and naming rules as a documented contract.",
+        "Keep primitive tokens distinct from semantic tokens and component-specific tokens."
+      ]
+    },
+    "interactive-experimental": {
+      "guidance": [
+        "Select the animation architecture based on interaction complexity; use native or CSS capabilities where they are sufficient.",
+        "Respect reduced-motion preferences and clean up timelines, observers, and event listeners."
+      ]
+    }
+  },
+  "recipes": []
+}

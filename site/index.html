@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f0" />
+    <meta name="description" content="A framework-aware frontend setup CLI. Generate a practical architecture foundation, design tokens, motion utilities, and project guidance without repeating the same setup work." />
+    <meta property="og:title" content="Frontend Setup — Start with a system" />
+    <meta property="og:description" content="A small, configurable CLI for a better frontend starting point." />
+    <meta property="og:type" content="website" />
+    <title>Frontend Setup — A better starting point</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231a1b18'/%3E%3Cpath d='M18 17h28v8H27v7h15v8H27v10h-9z' fill='%23d7fd52'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner page-shell">
+        <a class="brand" href="#top" aria-label="Frontend Setup home">
+          <span class="brand__mark" aria-hidden="true">f<span>/</span></span>
+          <span class="brand__wordmark">frontend<span>setup</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#why">Why it exists</a>
+          <a href="#workflow">How it works</a>
+          <a href="#frameworks">Frameworks</a>
+          <a href="#updates">Updates</a>
+          <a href="#privacy">Privacy</a>
+        </nav>
+        <a class="button button--small button--dark site-header__cta" href="#install">Get started <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav page-shell" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#why">Why it exists</a>
+        <a href="#workflow">How it works</a>
+        <a href="#frameworks">Frameworks</a>
+        <a href="#updates">Updates</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#install">Get started</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero page-shell" id="top">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> A practical frontend foundation</p>
+          <h1>Start with a <span class="hero__highlight">system.</span><br />Not setup overhead.</h1>
+          <p class="hero__lead">A framework-aware CLI that gives your project a clean starting point — tokens, naming conventions, motion utilities, API patterns, and architecture notes — without forcing every app into the same shape.</p>
+          <div class="hero__actions">
+            <a class="button button--dark" href="#install">Explore the setup <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#workflow">See how it works <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero__meta">
+            <span><span class="status-dot"></span> Offline-first</span>
+            <span class="hero__meta-divider" aria-hidden="true"></span>
+            <span>Configurable by design</span>
+          </div>
+        </div>
+
+        <div class="hero-demo" aria-label="Example terminal output">
+          <div class="hero-demo__topbar">
+            <div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="hero-demo__filename">~/projects/folio</span>
+            <span class="hero-demo__badge">preview</span>
+          </div>
+          <div class="terminal">
+            <p class="terminal__line"><span class="terminal__prompt">$</span> npx frontend-setup init</p>
+            <p class="terminal__muted">◆ Frontend Setup</p>
+            <p class="terminal__line terminal__line--success">✓ Project detected <span>Astro</span></p>
+            <p class="terminal__line terminal__line--success">✓ Profile selected <span>Marketing site</span></p>
+            <p class="terminal__line terminal__line--success">✓ Styling strategy <span>Tokenized CSS</span></p>
+            <p class="terminal__line terminal__line--success">✓ Motion engine <span>GSAP (optional)</span></p>
+            <div class="terminal__divider"></div>
+            <p class="terminal__muted">Planned files</p>
+            <p class="terminal__file"><span>+</span> frontend-architecture.config.json</p>
+            <p class="terminal__file"><span>+</span> ARCHITECTURE.md</p>
+            <p class="terminal__file"><span>+</span> src/styles/tokens.css</p>
+            <p class="terminal__file"><span>+</span> src/styles/typography.css</p>
+            <p class="terminal__file"><span>+</span> src/lib/text-splitting.ts</p>
+            <div class="terminal__result"><span class="terminal__result-icon">↳</span><span>Preview first. Write only what you need.</span></div>
+          </div>
+          <div class="hero-demo__footer"><span>Architecture-aware scaffolding</span><span class="hero-demo__footer-mark">F/S</span></div>
+        </div>
+
+        <div class="hero__orbit hero__orbit--one" aria-hidden="true"></div>
+        <div class="hero__orbit hero__orbit--two" aria-hidden="true"></div>
+      </section>
+
+      <section class="signal-strip" aria-label="Product principles">
+        <div class="signal-strip__inner page-shell">
+          <div class="signal-item"><span class="signal-item__number">01</span><span>Framework aware</span></div>
+          <div class="signal-item"><span class="signal-item__number">02</span><span>Minimal by default</span></div>
+          <div class="signal-item"><span class="signal-item__number">03</span><span>Privacy first</span></div>
+          <div class="signal-item"><span class="signal-item__number">04</span><span>Made to configure</span></div>
+        </div>
+      </section>
+
+      <section class="section section--intro page-shell" id="why">
+        <div class="section-heading">
+          <p class="eyebrow">The problem</p>
+          <h2>Good projects shouldn't begin with the same chores.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Every new frontend project needs decisions: where files live, how styles are named, how tokens work, what owns API requests, and how animations are cleaned up.</p>
+          <p>Frontend Setup captures those decisions in a reusable, editable foundation. It adapts to the framework and project type instead of generating an oversized boilerplate.</p>
+        </div>
+      </section>
+
+      <section class="section feature-section page-shell" aria-label="Core capabilities">
+        <article class="feature-card feature-card--dark">
+          <div class="feature-card__icon feature-card__icon--lime" aria-hidden="true">{ }</div>
+          <p class="feature-card__kicker">Architecture</p>
+          <h3>Clear boundaries.<br />Less guesswork.</h3>
+          <p>Start with practical responsibilities for components, layouts, services, hooks, utilities, stores, and types — only where they are needed.</p>
+          <div class="mini-tree" aria-label="Example project structure">
+            <span>src/</span><span class="mini-tree__indent">├─ components/</span><span class="mini-tree__indent">├─ layout/</span><span class="mini-tree__indent">├─ services/</span><span class="mini-tree__indent">└─ styles/</span>
+          </div>
+        </article>
+        <article class="feature-card feature-card--light">
+          <div class="feature-card__icon" aria-hidden="true">◫</div>
+          <p class="feature-card__kicker">Design foundation</p>
+          <h3>Tokens you can<br />actually maintain.</h3>
+          <p>Semantic values and numerical scales for color, spacing, type, radius, sizing, and motion. Fluid typography is the default, not an afterthought.</p>
+          <div class="token-sample" aria-label="Example design tokens">
+            <div class="token-sample__swatches"><i></i><i></i><i></i><i></i><i></i></div>
+            <code>--color-text · --space-4 · --radius-card</code>
+          </div>
+        </article>
+        <article class="feature-card feature-card--lime">
+          <div class="feature-card__icon" aria-hidden="true">↗</div>
+          <p class="feature-card__kicker">Motion system</p>
+          <h3>Motion with<br />a clear contract.</h3>
+          <p>Use data attributes for declarative targets, GSAP for web motion, and Reanimated for Expo. Lifecycle and cleanup stay part of the setup.</p>
+          <div class="motion-sample" aria-hidden="true"><span data-demo-motion="one"></span><span data-demo-motion="two"></span><span data-demo-motion="three"></span><span data-demo-motion="four"></span><span data-demo-motion="five"></span></div>
+        </article>
+      </section>
+
+      <section class="section workflow-section" id="workflow">
+        <div class="page-shell">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow">The workflow</p>
+            <h2>One command. Deliberate choices.</h2>
+            <p class="section-heading__lead">It doesn't replace your framework's project creator. Run it inside a project to establish the architecture around it.</p>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card"><span class="step-card__index">01</span><div class="step-card__icon" aria-hidden="true">⌘</div><h3>Detect</h3><p>Identify framework and package-manager markers from limited local project metadata.</p><span class="step-card__tag">Read-only inspection</span></article>
+            <article class="step-card"><span class="step-card__index">02</span><div class="step-card__icon" aria-hidden="true">◈</div><h3>Choose</h3><p>Select a project profile and configure styling, state, API, and motion preferences.</p><span class="step-card__tag">Defaults + overrides</span></article>
+            <article class="step-card"><span class="step-card__index">03</span><div class="step-card__icon" aria-hidden="true">▤</div><h3>Preview</h3><p>Review the proposed files before applying the setup. Existing files are preserved by default.</p><span class="step-card__tag">Safe by default</span></article>
+            <article class="step-card"><span class="step-card__index">04</span><div class="step-card__icon" aria-hidden="true">✓</div><h3>Build on it</h3><p>Keep a machine-readable config and a human-readable architecture record with the project.</p><span class="step-card__tag">Ready for your agent</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section framework-section page-shell" id="frameworks">
+        <div class="framework-section__heading">
+          <div class="section-heading">
+            <p class="eyebrow">Framework adapters</p>
+            <h2>Shared principles.<br />Native implementation.</h2>
+          </div>
+          <p>The conventions stay consistent. The implementation respects each framework's routing, rendering, lifecycle, and styling model.</p>
+        </div>
+        <div class="framework-grid">
+          <div class="framework-card"><span class="framework-card__symbol framework-card__symbol--next">N</span><span class="framework-card__name">Next.js</span><span class="framework-card__meta">App Router</span></div>
+          <div class="framework-card"><span class="framework-card__symbol framework-card__symbol--react">◉</span><span class="framework-card__name">React + Vite</span><span class="framework-card__meta">Client apps</span></div>
+          <div class="framework-card"><span class="framework-card__symbol framework-card__symbol--astro">✳</span><span class="framework-card__name">Astro</span><span class="framework-card__meta">Static-first</span></div>
+          <div class="framework-card"><span class="framework-card__symbol framework-card__symbol--expo">▣</span><span class="framework-card__name">Expo</span><span class="framework-card__meta">React Native</span></div>
+          <div class="framework-card"><span class="framework-card__symbol framework-card__symbol--router">⌘</span><span class="framework-card__name">React Router</span><span class="framework-card__meta">Route-first</span></div>
+          <div class="framework-card"><span class="framework-card__symbol framework-card__symbol--vanilla">{ }</span><span class="framework-card__name">Vanilla</span><span class="framework-card__meta">HTML, CSS, JS</span></div>
+        </div>
+        <div class="profile-line"><span class="profile-line__label">Project profiles</span><div class="profile-line__tags"><span>Landing pages</span><span>Marketing sites</span><span>CMS & blogs</span><span>SaaS dashboards</span><span>Web apps</span><span>Design systems</span><span>Interactive sites</span></div></div>
+      </section>
+
+      <section class="section install-section" id="install">
+        <div class="page-shell install-section__grid">
+          <div class="install-section__copy">
+            <p class="eyebrow">Getting started</p>
+            <h2>Make the setup yours.</h2>
+            <p>Choose your package manager and copy the command. The package is currently an unpublished preview; these commands become usable after the npm package is released.</p>
+            <div class="install-note"><span class="install-note__icon" aria-hidden="true">i</span><span>First create your framework project using its official creator. Then run Frontend Setup from that project directory.</span></div>
+          </div>
+          <div class="install-panel">
+            <div class="install-panel__top"><span>Install command</span><span class="install-panel__status"><i></i> Preview</span></div>
+            <div class="package-tabs" role="tablist" aria-label="Choose package manager">
+              <button class="package-tabs__tab is-active" type="button" role="tab" aria-selected="true" data-manager="npm">npm</button>
+              <button class="package-tabs__tab" type="button" role="tab" aria-selected="false" data-manager="pnpm">pnpm</button>
+              <button class="package-tabs__tab" type="button" role="tab" aria-selected="false" data-manager="yarn">Yarn</button>
+              <button class="package-tabs__tab" type="button" role="tab" aria-selected="false" data-manager="bun">Bun</button>
+            </div>
+            <div class="command-block"><code id="install-command">npx frontend-setup init</code><button class="copy-button" type="button" data-copy-command aria-label="Copy install command">Copy</button></div>
+            <p class="install-panel__helper" id="install-helper">Uses npx to run the published CLI without installing it globally.</p>
+            <div class="install-panel__divider"></div>
+            <p class="install-panel__label">Useful commands</p>
+            <div class="quick-command"><code>frontend-setup init --dry-run</code><span>Preview</span></div>
+            <div class="quick-command"><code>frontend-setup doctor</code><span>Diagnose</span></div>
+            <div class="quick-command"><code>frontend-setup update</code><span>Version check</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section config-section page-shell">
+        <div class="config-section__content">
+          <p class="eyebrow">Fits your workflow</p>
+          <h2>Defaults aren't handcuffs.</h2>
+          <p>Keep your choices in <code>frontend-architecture.config.json</code>, and record the reasoning in <code>ARCHITECTURE.md</code>. Start from the recommended stack, then change what the project actually needs.</p>
+          <div class="config-points"><span><b>✓</b> Optional Zustand and TanStack Query</span><span><b>✓</b> Configurable motion engine</span><span><b>✓</b> Feature folders only when useful</span><span><b>✓</b> Tooling chosen for the repository</span></div>
+        </div>
+        <div class="config-code" aria-label="Example configuration"><div class="config-code__top"><span>frontend-architecture.config.json</span><span>JSON</span></div><pre><code>{
+  <span class="json-key">"framework"</span>: <span class="json-string">"astro"</span>,
+  <span class="json-key">"profile"</span>: <span class="json-string">"marketing-site"</span>,
+  <span class="json-key">"styling"</span>: {
+    <span class="json-key">"strategy"</span>: <span class="json-string">"tokenized-css"</span>,
+    <span class="json-key">"naming"</span>: <span class="json-string">"bem"</span>
+  },
+  <span class="json-key">"motion"</span>: {
+    <span class="json-key">"enabled"</span>: <span class="json-bool">true</span>,
+    <span class="json-key">"engine"</span>: <span class="json-string">"gsap"</span>
+  }
+}</code></pre></div>
+      </section>
+
+
+      <section class="section updates-section" id="updates">
+        <div class="page-shell updates-section__grid">
+          <div class="updates-section__copy">
+            <p class="eyebrow">The knowledge layer</p>
+            <h2>Keep shared guidance current. Keep project data local.</h2>
+            <p>Run the CLI offline by default. When you choose to connect, it fetches a read-only JSON catalog, validates its schema, and caches it locally. Matching framework and project-profile notes appear during setup. Generated files still come from the local templates; catalog content is never executed.</p>
+            <p class="updates-section__status"><span></span> Catalog endpoint included; public after site deployment</p>
+          </div>
+          <div class="updates-console">
+            <div class="updates-console__top"><span>Explicit network commands</span><span>OPT-IN</span></div>
+            <div class="updates-console__row"><div><code>frontend-setup update</code><p>Check npm for a newer CLI version.</p></div><span>Version</span></div>
+            <div class="updates-console__row"><div><code>frontend-setup connect https://your-domain/catalog/v1/catalog.json</code><p>Choose a catalog endpoint you trust.</p></div><span>Connect</span></div>
+            <div class="updates-console__row"><div><code>frontend-setup sync</code><p>Download and validate the configured catalog.</p></div><span>Sync</span></div>
+            <p class="updates-console__footnote">After deployment, use your docs domain for the included catalog endpoint. Review and version catalog guidance like source code.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section privacy-section" id="privacy">
+        <div class="page-shell privacy-section__inner">
+          <div class="privacy-section__stamp" aria-hidden="true"><span>LOCAL</span><b>↗</b><span>FIRST</span></div>
+          <div class="privacy-section__copy"><p class="eyebrow">Privacy and control</p><h2>Your project stays yours.</h2><p>There is no telemetry or analytics in the current CLI. It reads limited metadata for detection and does not upload source files or project information. Network requests happen only when you explicitly run update or catalog commands.</p><a class="text-link" href="https://docs.npmjs.com/" target="_blank" rel="noreferrer">Read about package security <span aria-hidden="true">↗</span></a></div>
+          <div class="privacy-checks"><div><span>01</span><p>No usage analytics</p><b>✓</b></div><div><span>02</span><p>No source uploads</p><b>✓</b></div><div><span>03</span><p>Preview before writing</p><b>✓</b></div><div><span>04</span><p>Explicit network actions</p><b>✓</b></div></div>
+        </div>
+      </section>
+
+      <section class="final-cta page-shell" id="release">
+        <div class="final-cta__mark" aria-hidden="true">f<span>/</span></div>
+        <div><p class="eyebrow">A better baseline</p><h2>Spend your time on the product.</h2><p>Let the setup be repeatable. Keep the decisions yours.</p></div>
+        <a class="button button--lime" href="#install">View setup commands <span aria-hidden="true">↑</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell site-footer__inner">
+        <a class="brand brand--footer" href="#top"><span class="brand__mark" aria-hidden="true">f<span>/</span></span><span class="brand__wordmark">frontend<span>setup</span></span></a>
+        <p>A practical frontend foundation. Built to be changed.</p>
+        <div class="site-footer__links"><a href="#workflow">How it works</a><a href="#privacy">Privacy</a><a href="#top">Back to top ↑</a></div>
+        <span class="site-footer__copyright">Source preview · v0.1.0</span>
+      </div>
+    </footer>
+  </body>
+</html>

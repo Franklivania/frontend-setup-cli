@@ -1,0 +1,49 @@
+{
+  "name": "frontend-setup",
+  "version": "0.1.0",
+  "description": "An offline-first frontend architecture setup CLI with framework-aware defaults.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "bin": {
+    "frontend-setup": "./dist/cli.js",
+    "setup": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "registry/",
+    "references/",
+    "README.md",
+    "PRIVACY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsup src/cli.ts --format esm --target node20 --out-dir dist --clean",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.0"
+  },
+  "keywords": [
+    "frontend",
+    "architecture",
+    "cli",
+    "scaffolding",
+    "design-tokens",
+    "gsap",
+    "react-native",
+    "astro"
+  ]
+}

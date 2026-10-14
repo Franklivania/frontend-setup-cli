@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "framework": "auto",
+  "projectProfile": "auto",
+  "projectScope": "auto",
+  "styling": {
+    "strategy": "hybrid",
+    "classNaming": "bem-kebab-case",
+    "componentCss": "colocated-or-parallel",
+    "tokenModel": [
+      "primitive",
+      "semantic",
+      "component-when-useful"
+    ],
+    "responsiveStrategy": "fluid-first-hybrid",
+    "breakpoints": "derive-from-layout",
+    "themes": "only-when-requested-or-required",
+    "fontPolicy": "prefer-local; download-only-when-requested"
+  },
+  "motion": {
+    "webDefault": "gsap",
+    "simpleMotion": "prefer-css-or-native-capabilities",
+    "reactGsapIntegration": "useGSAP-when-appropriate",
+    "astroStrategy": "choose-plain-script-or-existing-island",
+    "expoDefault": "reanimated",
+    "customEngine": null,
+    "architecture": "hybrid-registry-and-component-owned",
+    "generateTextSplitUtilitiesForWeb": true,
+    "reducedMotion": "required",
+    "dynamicContent": "explicit-reinitialization-first; scoped-observer-only-if-needed"
+  },
+  "state": {
+    "local": "framework-native",
+    "sharedClient": "zustand-when-needed",
+    "server": "tanstack-query-when-needed",
+    "preferFrameworkNativeData": true,
+    "avoidDuplicateServerState": true
+  },
+  "api": {
+    "client": "centralized-when-backend-present",
+    "multipart": true,
+    "endpointRegistry": "single-file-until-domain-complexity-justifies-splitting",
+    "typedContracts": true
+  },
+  "tooling": {
+    "formatter": "detect-or-configure-one-of-prettier-or-biome",
+    "husky": "optional-when-useful",
+    "githubActions": "out-of-scope-unless-requested",
+    "reuseExistingDependencies": true
+  },
+  "architecture": {
+    "featureDirectories": "optional-when-domain-complexity-justifies-them",
+    "inspectExistingRepository": true,
+    "createOnlyNeededDirectories": true,
+    "writeArchitectureDocument": true
+  },
+  "registry": {
+    "url": null,
+    "autoSync": false,
+    "cacheTtlHours": 24,
+    "schemaVersion": 1
+  },
+  "privacy": {
+    "telemetry": false,
+    "uploadProjectFiles": false,
+    "autoSync": false
+  }
+}
