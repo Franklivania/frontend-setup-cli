@@ -4,9 +4,9 @@ An offline-first CLI for setting up a consistent frontend foundation without for
 
 It packages a reusable frontend architecture playbook into an interactive developer workflow: detect the project, choose a profile, preview the plan, generate only relevant files, and document decisions.
 
-## Package status
+Docs: [frontend-setup-cli.pages.dev](https://frontend-setup-cli.pages.dev)
 
-This is an initial source scaffold (`0.1.0`), not yet published to npm and not yet connected to an official hosted community catalog. The package name `frontend-setup` is provisional. The primary executable is `frontend-setup`, with `setup` as an alias. Both aliases point to the same CLI.
+The primary executable is `frontend-setup`, with `setup` as a bin alias. Prefer `npx frontend-setup` so you do not hit the unrelated npm package named `setup`.
 
 ## Commands
 
@@ -32,7 +32,7 @@ npx frontend-setup init --framework astro --profile marketing-site --dry-run
 npx frontend-setup update
 
 # Configure and refresh a read-only JSON recipe catalog
-npx frontend-setup connect https://example.com/frontend-setup/catalog.json
+npx frontend-setup connect https://frontend-setup-cli.pages.dev/catalog/v1/catalog.json
 npx frontend-setup sync
 
 # Verify current project detection and configuration
@@ -41,7 +41,7 @@ npx frontend-setup doctor
 
 > Modern Yarn uses `yarn dlx`; Yarn Classic users can run the npm `npx` command or install the CLI as a dev dependency. Both `frontend-setup` and `setup` binaries are declared, so package managers can resolve the package-name command consistently. Bun can execute the CLI with its own runtime via `bunx --bun`.
 >
-> The unqualified command `npx setup init` resolves the separate npm package named `setup`, which is already registered. Use `npx frontend-setup init`, or to invoke the `setup` executable explicitly, `npx --yes --package=frontend-setup setup init`. The proposed `frontend-setup` package name remains provisional until its availability is verified during publication.
+> The unqualified command `npx setup init` resolves the separate npm package named `setup`, which is already registered. Use `npx frontend-setup init`, or to invoke the `setup` executable explicitly, `npx --yes --package=frontend-setup setup init`.
 
 ## Supported framework adapters
 
@@ -97,10 +97,3 @@ npm run build
 ## Architecture references
 
 The `references/` directory carries forward the architecture skill: CSS and token conventions, framework adapters, project sizing, GSAP/Reanimated lifecycle rules, state/API defaults, and documentation requirements.
-
-
-## Website and release hosting
-
-A no-build static product page lives in [`site/`](./site/). It describes the setup workflow, supported frameworks, package-manager commands, configuration, and privacy. It is separate from the published npm package.
-
-See [`HOSTING.md`](./HOSTING.md) for the complete npm release, trusted publishing, and Cloudflare Pages deployment checklist. The site is ready to deploy as static content, but the npm package and official community catalog are not yet published/hosted.
