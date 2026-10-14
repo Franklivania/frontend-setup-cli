@@ -2,8 +2,17 @@
   "name": "frontend-setup",
   "version": "0.1.0",
   "description": "An offline-first frontend architecture setup CLI with framework-aware defaults.",
+  "author": "Franklivania",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franklivania/frontend-setup-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Franklivania/frontend-setup-cli/issues"
+  },
+  "homepage": "https://frontend-setup-cli.pages.dev",
   "engines": {
     "node": ">=20.19.0"
   },
