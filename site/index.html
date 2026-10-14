@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f5f5f0" />
     <meta name="description" content="A framework-aware frontend setup CLI. Generate a practical architecture foundation, design tokens, motion utilities, and project guidance without repeating the same setup work." />
+    <meta name="author" content="Franklivania" />
+    <link rel="canonical" href="https://setup.grabby.lol/" />
+    <meta property="og:url" content="https://setup.grabby.lol/" />
     <meta property="og:title" content="Frontend Setup - Start with a system" />
     <meta property="og:description" content="A small, configurable CLI for a better frontend starting point." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://setup.grabby.lol/assets/og-hero.png" />
+    <meta property="og:image:alt" content="Frontend Setup — Start with a system, not setup overhead" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@Franklivania" />
+    <meta name="twitter:image" content="https://setup.grabby.lol/assets/og-hero.png" />
     <title>Frontend Setup - A better starting point</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231a1b18'/%3E%3Cpath d='M18 17h28v8H27v7h15v8H27v10h-9z' fill='%23d7fd52'/%3E%3C/svg%3E" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/script.js" defer></script>
   </head>
@@ -71,7 +82,7 @@
           <div class="hero-demo__topbar">
             <div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div>
             <span class="hero-demo__filename">~/projects/folio</span>
-            <span class="hero-demo__badge">preview</span>
+            <span class="hero-demo__badge">v<span data-package-version>0.1.1</span></span>
           </div>
           <div class="terminal">
             <p class="terminal__line"><span class="terminal__prompt">$</span> npx frontend-setup init</p>
@@ -227,11 +238,11 @@
           <div class="install-section__copy">
             <p class="eyebrow">Getting started</p>
             <h2>Make the setup yours.</h2>
-            <p>Choose your package manager and copy the command. The package is currently an unpublished preview; these commands become usable after the npm package is released.</p>
+            <p>Choose your package manager and copy the command. The CLI is published on npm as <code>frontend-setup</code>.</p>
             <div class="install-note"><span class="install-note__icon" aria-hidden="true">i</span><span>First create your framework project using its official creator. Then run Frontend Setup from that project directory.</span></div>
           </div>
           <div class="install-panel">
-            <div class="install-panel__top"><span>Install command</span><span class="install-panel__status"><i></i> Preview</span></div>
+            <div class="install-panel__top"><span>Install command</span><span class="install-panel__status"><i></i> Live · v<span data-package-version>0.1.1</span></span></div>
             <div class="package-tabs" role="tablist" aria-label="Choose package manager">
               <button class="package-tabs__tab is-active" type="button" role="tab" aria-selected="true" data-manager="npm">npm</button>
               <button class="package-tabs__tab" type="button" role="tab" aria-selected="false" data-manager="pnpm">pnpm</button>
@@ -277,14 +288,14 @@
             <p class="eyebrow">The knowledge layer</p>
             <h2>Keep shared guidance current. Keep project data local.</h2>
             <p>Run the CLI offline by default. When you choose to connect, it fetches a read-only JSON catalog, validates its schema, and caches it locally. Matching framework and project-profile notes appear during setup. Generated files still come from the local templates; catalog content is never executed.</p>
-            <p class="updates-section__status"><span></span> Catalog endpoint included; public after site deployment</p>
+            <p class="updates-section__status"><span></span> Catalog live at setup.grabby.lol</p>
           </div>
           <div class="updates-console">
             <div class="updates-console__top"><span>Explicit network commands</span><span>OPT-IN</span></div>
             <div class="updates-console__row"><div><code>frontend-setup update</code><p>Check npm for a newer CLI version.</p></div><span>Version</span></div>
-            <div class="updates-console__row"><div><code>frontend-setup connect https://your-domain/catalog/v1/catalog.json</code><p>Choose a catalog endpoint you trust.</p></div><span>Connect</span></div>
+            <div class="updates-console__row"><div><code>frontend-setup connect https://setup.grabby.lol/catalog/v1/catalog.json</code><p>Choose a catalog endpoint you trust.</p></div><span>Connect</span></div>
             <div class="updates-console__row"><div><code>frontend-setup sync</code><p>Download and validate the configured catalog.</p></div><span>Sync</span></div>
-            <p class="updates-console__footnote">After deployment, use your docs domain for the included catalog endpoint. Review and version catalog guidance like source code.</p>
+            <p class="updates-console__footnote">Use the official catalog at setup.grabby.lol, or point connect at another endpoint you trust. Review and version catalog guidance like source code.</p>
           </div>
         </div>
       </section>
@@ -314,7 +325,13 @@
           <a href="https://github.com/Franklivania/frontend-setup-cli" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
           <a href="#top">Back to top ↑</a>
         </div>
-        <span class="site-footer__copyright">Source preview · v0.1.0</span>
+        <div class="site-footer__author">
+          <span>Franklivania</span>
+          <a href="mailto:cfaodigbo@gmail.com">cfaodigbo@gmail.com</a>
+          <a href="https://github.com/Franklivania" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://x.com/Franklivania" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+        <span class="site-footer__copyright">Frontend Setup · v<span data-package-version>0.1.1</span></span>
       </div>
     </footer>
   </body>

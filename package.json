@@ -1,8 +1,12 @@
 {
   "name": "frontend-setup",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An offline-first frontend architecture setup CLI with framework-aware defaults.",
-  "author": "Franklivania",
+  "author": {
+    "name": "Franklivania",
+    "email": "cfaodigbo@gmail.com",
+    "url": "https://github.com/Franklivania"
+  },
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -12,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/Franklivania/frontend-setup-cli/issues"
   },
-  "homepage": "https://frontend-setup-cli.pages.dev",
+  "homepage": "https://setup.grabby.lol",
   "engines": {
     "node": ">=20.19.0"
   },

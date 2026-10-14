@@ -4,9 +4,15 @@ An offline-first CLI for setting up a consistent frontend foundation without for
 
 It packages a reusable frontend architecture playbook into an interactive developer workflow: detect the project, choose a profile, preview the plan, generate only relevant files, and document decisions.
 
-Docs: [frontend-setup-cli.pages.dev](https://frontend-setup-cli.pages.dev)
+Docs: [setup.grabby.lol](https://setup.grabby.lol)
+
+**Frameworks:** `next-app-router` · `react-vite` · `astro` · `expo` · `react-router` · `vanilla`
+
+**Profiles:** `landing-page` · `marketing-site` · `cms-blog` · `saas-dashboard` · `general-web-app` · `design-system` · `interactive-experimental`
 
 The primary executable is `frontend-setup`, with `setup` as a bin alias. Prefer `npx frontend-setup` so you do not hit the unrelated npm package named `setup`.
+
+Author: [Franklivania](https://github.com/Franklivania) · [X](https://x.com/Franklivania)
 
 ## Commands
 
@@ -17,7 +23,7 @@ npx frontend-setup init
 # Other package managers
 pnpm dlx frontend-setup init
 yarn dlx frontend-setup init  # modern Yarn (Berry)
-bunx --bun frontend-setup init  # run with Bun instead of Node.js
+bunx frontend-setup init
 
 # Non-interactive setup (framework and profile are explicit)
 npx frontend-setup init --yes --framework react-vite --profile landing-page
@@ -32,35 +38,16 @@ npx frontend-setup init --framework astro --profile marketing-site --dry-run
 npx frontend-setup update
 
 # Configure and refresh a read-only JSON recipe catalog
-npx frontend-setup connect https://frontend-setup-cli.pages.dev/catalog/v1/catalog.json
+npx frontend-setup connect https://setup.grabby.lol/catalog/v1/catalog.json
 npx frontend-setup sync
 
 # Verify current project detection and configuration
 npx frontend-setup doctor
 ```
 
-> Modern Yarn uses `yarn dlx`; Yarn Classic users can run the npm `npx` command or install the CLI as a dev dependency. Both `frontend-setup` and `setup` binaries are declared, so package managers can resolve the package-name command consistently. Bun can execute the CLI with its own runtime via `bunx --bun`.
+> Modern Yarn uses `yarn dlx`; Yarn Classic users can run the npm `npx` command or install the CLI as a dev dependency. Both `frontend-setup` and `setup` binaries are declared, so package managers can resolve the package-name command consistently. Prefer `bunx frontend-setup` (without `--bun`) on Windows if Bun cache moves fail with `EPERM`.
 >
 > The unqualified command `npx setup init` resolves the separate npm package named `setup`, which is already registered. Use `npx frontend-setup init`, or to invoke the `setup` executable explicitly, `npx --yes --package=frontend-setup setup init`.
-
-## Supported framework adapters
-
-- `next-app-router`
-- `react-vite`
-- `astro`
-- `expo`
-- `react-router`
-- `vanilla`
-
-## Supported project profiles
-
-- `landing-page`
-- `marketing-site`
-- `cms-blog`
-- `saas-dashboard`
-- `general-web-app`
-- `design-system`
-- `interactive-experimental`
 
 ## What `init` does
 

@@ -288,7 +288,10 @@ a:focus-visible, button:focus-visible {
 .brand--footer .brand__wordmark { font-size: .9rem; }
 .site-footer__inner > p { margin: 0; color: var(--ink-500); font-size: var(--text-xs); }
 .site-footer__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1rem; color: var(--ink-600); font-size: var(--text-xs); }
-.site-footer__copyright { grid-column: 1 / -1; padding-top: .9rem; border-top: 1px solid var(--paper-200); color: var(--ink-500); font-family: var(--font-mono); font-size: .65rem; }
+.site-footer__author { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .75rem 1.1rem; padding-top: .85rem; border-top: 1px solid var(--paper-200); color: var(--ink-600); font-size: var(--text-xs); }
+.site-footer__author a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.site-footer__author a:hover { color: var(--ink-950); }
+.site-footer__copyright { grid-column: 1 / -1; padding-top: .55rem; color: var(--ink-500); font-family: var(--font-mono); font-size: .65rem; }
 
 @media (max-width: 1000px) {
   .hero { grid-template-columns: 1fr; gap: 3rem; }

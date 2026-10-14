@@ -29,7 +29,7 @@ Primary path: **GitHub + npm trusted publishing + Cloudflare Pages**. For a Verc
 - Local Node.js ≥ 20.19 (see `engines` in `package.json`).
 - An npm account that will own the package name `frontend-setup`. Confirm the name is free (or already yours) before the first publish: `npm view frontend-setup` should fail if unpublished.
 - A Cloudflare account for Pages.
-- Optional: a custom domain for the docs site / catalog URL.
+- Custom domain for the docs site / catalog: `https://setup.grabby.lol` (already the canonical public URL).
 
 ---
 
@@ -50,13 +50,13 @@ Primary path: **GitHub + npm trusted publishing + Cloudflare Pages**. For a Verc
    - Build output directory: `site`
 3. Deploy. Attach a custom domain from the project settings if desired.
 4. Verify:
-   - `https://<your-domain>/` loads the product page
-   - `https://<your-domain>/catalog/v1/catalog.json` returns the catalog JSON
+   - `https://setup.grabby.lol/` loads the product page
+   - `https://setup.grabby.lol/catalog/v1/catalog.json` returns the catalog JSON
    - Security/cache headers from [`site/_headers`](./site/_headers) are present (especially for `/catalog/v1/catalog.json`)
-5. After the site is public, consumers can point the CLI at the catalog:
+5. Consumers can point the CLI at the catalog:
 
 ```sh
-frontend-setup connect https://<your-domain>/catalog/v1/catalog.json
+frontend-setup connect https://setup.grabby.lol/catalog/v1/catalog.json
 frontend-setup sync
 ```
 
@@ -73,12 +73,12 @@ Publishing uses GitHub Actions OIDC (`id-token: write` in `publish.yml`). Do **n
    - Follow current npm docs for “trusted publishers” / OIDC if the UI labels differ
 3. If npm requires the package to exist before you can attach a trusted publisher, use npm’s documented bootstrap for the first publish with a trusted publisher (still prefer OIDC over a long-lived token). After that, every release is tag-driven only.
 
-### 4. First CLI release (`0.1.0`)
+### 4. First CLI release
 
-Current source version is `0.1.0`. The publish job fails unless the git tag equals `v` + `package.json` `version`.
+The publish job fails unless the git tag equals `v` + `package.json` `version`. Current source aims at the next release after any local bump (see `package.json`).
 
-1. On `main`, confirm `"version": "0.1.0"` in `package.json`.
-2. Update site copy if you want the public page to say the package is published (for example the install section in [`site/index.html`](./site/index.html)). Push that with the release commit or immediately after.
+1. On `main`, confirm the intended `"version"` in `package.json`.
+2. Keep site copy/SEO assets aligned with the live product (`setup.grabby.lol`). Push that with the release commit or immediately after.
 3. Commit any remaining release-ready changes on `main` and push:
 
 ```sh
@@ -88,8 +88,8 @@ git push origin main
 4. Create and push an annotated tag that matches the version:
 
 ```sh
-git tag -a v0.1.0 -m "Release v0.1.0"
-git push origin v0.1.0
+git tag -a vX.Y.Z -m "Release vX.Y.Z"
+git push origin vX.Y.Z
 ```
 
 5. In GitHub Actions, watch **Publish CLI to npm**. It typechecks, tests, builds, then runs `npm publish`.
@@ -97,7 +97,7 @@ git push origin v0.1.0
 
 ```sh
 npm view frontend-setup version
-npx frontend-setup@0.1.0 --help
+npx frontend-setup@latest --help
 npx frontend-setup update
 ```
 
@@ -205,8 +205,8 @@ npm view frontend-setup version
 npx frontend-setup@latest --help
 npx frontend-setup update
 
-# Catalog after Pages is live
-frontend-setup connect https://<your-domain>/catalog/v1/catalog.json
+# Catalog
+frontend-setup connect https://setup.grabby.lol/catalog/v1/catalog.json
 frontend-setup sync
 ```
 

@@ -12,8 +12,8 @@ const commandByManager = {
     helper: 'Uses Yarn dlx (modern Yarn). Yarn Classic can use the npx command or install the CLI as a dev dependency.'
   },
   bun: {
-    command: 'bunx --bun frontend-setup init',
-    helper: 'Uses Bun to execute the published CLI with the Bun runtime.'
+    command: 'bunx frontend-setup init',
+    helper: 'Uses bunx to run the published CLI. Prefer this over bunx --bun on Windows if cache moves fail.'
   }
 };
 
@@ -91,4 +91,22 @@ mobileNav?.querySelectorAll('a').forEach((link) => {
   });
 });
 
+async function hydratePackageVersion() {
+  const nodes = document.querySelectorAll('[data-package-version]');
+  if (!nodes.length) return;
+  try {
+    const response = await fetch('https://registry.npmjs.org/frontend-setup/latest', {
+      headers: { Accept: 'application/json' }
+    });
+    if (!response.ok) return;
+    const data = await response.json();
+    const version = typeof data.version === 'string' ? data.version.trim() : '';
+    if (!version) return;
+    for (const node of nodes) node.textContent = version;
+  } catch {
+    // Keep HTML fallback version when npm is unreachable.
+  }
+}
+
 selectManager('npm');
+hydratePackageVersion();
