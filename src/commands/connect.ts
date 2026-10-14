@@ -11,7 +11,7 @@ export async function runConnect(rootArg: string, cwd: string): Promise<void> {
       message: "Read-only community catalog URL",
       placeholder: "https://example.com/frontend-setup/catalog.json",
       validate(value) {
-        if (!value.trim()) return "Enter a catalog URL.";
+        if (value === undefined || !value.trim()) return "Enter a catalog URL.";
         try {
           const parsed = new URL(value);
           const localHost = parsed.hostname === "localhost" || parsed.hostname === "127.0.0.1";

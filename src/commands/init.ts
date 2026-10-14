@@ -172,7 +172,7 @@ export async function runInit(options: InitOptions): Promise<void> {
       message: "Which motion library or implementation should this project use?",
       placeholder: framework === "expo" ? "e.g. react-native-skia" : "e.g. motion, framer-motion, or an internal engine",
       validate(value) {
-        if (!value.trim()) return "Enter a library or implementation name, or choose a standard engine.";
+        if (value === undefined || !value.trim()) return "Enter a library or implementation name, or choose a standard engine.";
         if (value.length > 160) return "Keep the engine name under 160 characters.";
         return undefined;
       }
