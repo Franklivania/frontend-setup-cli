@@ -233,5 +233,5 @@ export async function buildPlannedFiles(input: {
     );
   }
 
-  return files.map((file) => ({ ...file, path: path.normalize(file.path) }));
+  return files.map((file) => ({ ...file, path: path.posix.normalize(file.path) }));
 }
